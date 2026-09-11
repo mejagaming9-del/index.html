@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Major ❤️ Haylee</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #e63946;
+    }
+    button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #yesBtn {
+      background: green;
+      color: white;
+    }
+    #noBtn {
+      background: red;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+    .heart {
+      font-size: 4em;
+      color: red;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div id="step1">
+    <h1>Do you love me? 💕</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+    <p id="noMessage" class="hidden">No no no... don’t do that 😢</p>
+  </div>
+
+  <div id="step2" class="hidden">
+    <h1>💌 Our 3 Months Together 💌</h1>
+    <p>Major & Haylee — these months have been full of love, laughter, and unforgettable memories. You’ve brought back my smile and made every day worth living. ❤️</p>
+    <div class="heart">❤️</div>
+    <button id="nextToStep3">Continue</button>
+  </div>
+
+  <div id="step3" class="hidden">
+    <h1>😳 I’m gonna touch you 😳</h1>
+    <p>With this emoji... 😳</p>
+    <button id="nextToStep4">Continue</button>
+  </div>
+
+  <div id="step4" class="hidden">
+    <h1>I will wait for you ⏳</h1>
+    <button id="waitSongBtn">Wait For U 🎶</button>
+  </div>
+
+  <div id="finalStep" class="hidden">
+    <h1>I love you forever ❤️</h1>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const noMessage = document.getElementById("noMessage");
+
+    yesBtn.onclick = () => {
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.remove("hidden");
+    };
+
+    noBtn.onclick = () => {
+      noBtn.style.transform = "scale(0.8)";
+      yesBtn.style.transform = "scale(1.2)";
+      noMessage.classList.remove("hidden");
+    };
+
+    document.getElementById("nextToStep3").onclick = () => {
+      document.getElementById("step2").classList.add("hidden");
+      document.getElementById("step3").classList.remove("hidden");
+    };
+
+    document.getElementById("nextToStep4").onclick = () => {
+      document.getElementById("step3").classList.add("hidden");
+      document.getElementById("step4").classList.remove("hidden");
+    };
+
+    document.getElementById("waitSongBtn").onclick = () => {
+      window.open("https://youtu.be/Y2QpQP8wPG8?si=A8DUofvKE7OZCray", "_blank"); // Future - Wait For U
+      document.getElementById("step4").classList.add("hidden");
+      document.getElementById("finalStep").classList.remove("hidden");
+    };
+  </script>
+</body>
+</html>
